@@ -4,9 +4,7 @@ import io.github.orange.line.Constants;
 import io.github.orange.line.LineException;
 import io.github.orange.line.annotation.Property;
 import io.github.orange.line.parser.deserializer.ObjectDeserializer;
-import io.github.orange.line.serializer.DateCodec;
-import io.github.orange.line.serializer.NumberCodec;
-import io.github.orange.line.serializer.StringCodec;
+import io.github.orange.line.serializer.*;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
@@ -34,7 +32,7 @@ public class ParserConfig
     {
         deserializers = new ConcurrentHashMap<>();
 
-        this.separator = Constants.DEFAULT_SEPARATOR;
+        this.separator = Constants.DEFAULT_SEPARATOR_REGEX;
 
         this.dateFormat = Constants.DEFAULT_DATE_FORMAT;
 
@@ -56,6 +54,10 @@ public class ParserConfig
         put(Long.class, NumberCodec.instance);
         put(Short.class, NumberCodec.instance);
         put(BigDecimal.class, NumberCodec.instance);
+        put(boolean.class, BooleanCodec.instance);
+        put(Boolean.class, BooleanCodec.instance);
+        put(char.class, CharacterCodec.instance);
+        put(Character.class, CharacterCodec.instance);
     }
 
 
@@ -83,7 +85,7 @@ public class ParserConfig
             }
             catch (InstantiationException |IllegalAccessException e)
             {
-                throw new LineException("new instance of ObjectDeserializer fail:" + property.deserializer() + "not support," + e.getLocalizedMessage());
+                throw new LineException("new instance of ObjectDeserializer fail:" + property.deserializer() + " not support:", e);
             }
         }
 
@@ -95,7 +97,7 @@ public class ParserConfig
 
         if(deserializer == null)
         {
-            throw new LineException("the field type " + type.getTypeName() + "not support");
+            throw new LineException("the field type " + type.getTypeName() + " not support");
         }
 
         return deserializer;

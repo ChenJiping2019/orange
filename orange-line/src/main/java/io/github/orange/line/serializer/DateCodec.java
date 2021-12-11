@@ -1,13 +1,16 @@
 package io.github.orange.line.serializer;
 
+import io.github.orange.line.LineException;
 import io.github.orange.line.annotation.Property;
 import io.github.orange.line.parser.LineParser;
 import io.github.orange.line.parser.deserializer.ObjectDeserializer;
 import io.github.orange.line.util.WriteUtil;
 
 import java.io.StringWriter;
+import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,7 +32,7 @@ public class DateCodec implements ObjectSerializer, ObjectDeserializer
 
         DateFormat format = null;
 
-        if(property.pattern() != null)
+        if(property.pattern() != null && !"".equals(property.pattern().trim()))
         {
             format = new SimpleDateFormat(property.pattern());
         }
@@ -43,8 +46,38 @@ public class DateCodec implements ObjectSerializer, ObjectDeserializer
     }
 
     @Override
-    public <T> T deserialze(LineParser parser, Type type, String fieldName, Property property)
+    public <T> T deserialze(LineParser parser, String input, Field field)
     {
-        return null;
+        Date date = null;
+
+        if(input == null)
+        {
+            return (T) date;
+        }
+
+        Property property = field.getAnnotation(Property.class);
+
+        DateFormat format = null;
+
+        if(property.pattern() != null && !"".equals(property.pattern().trim()))
+        {
+            format = new SimpleDateFormat(property.pattern());
+        }
+
+        if(format == null)
+        {
+            format = parser.getDateFormat();
+        }
+
+        try
+        {
+            date = format.parse(input.trim());
+        }
+        catch (ParseException e)
+        {
+            throw new LineException("date parse fail:", e);
+        }
+
+        return (T) date;
     }
 }

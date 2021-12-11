@@ -8,6 +8,10 @@ import io.github.orange.line.util.FieldUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * @author orange
@@ -22,6 +26,14 @@ public class LineParser
 
     private Object object;
 
+    private String dateFormatPattern;
+
+    private DateFormat dateFormat;
+
+    private static TimeZone timeZone = TimeZone.getDefault();
+
+    private static Locale locale = Locale.getDefault();
+
     public LineParser(String input)
     {
         this(input, ParserConfig.globalInstance);
@@ -32,6 +44,8 @@ public class LineParser
         this.input = input;
 
         this.config = config;
+
+        this.setDateFormat(config.getDateFormat());
     }
 
     public <T> T parseObject(Class<T> clazz)
@@ -70,7 +84,7 @@ public class LineParser
 
             ObjectDeserializer derializer = config.getDeserializer(field.getType(), field);
 
-            Object value = derializer.deserialze(this, field.getType(), field.getName(), field.getAnnotation(Property.class));
+            Object value = derializer.deserialze(this, contentes[i], field);
 
             FieldUtil.setValue(object, field, value);
 
@@ -95,5 +109,47 @@ public class LineParser
         }
 
         return field;
+    }
+
+    public String getDateFormatPattern()
+    {
+        if (dateFormat instanceof SimpleDateFormat)
+        {
+            return ((SimpleDateFormat) dateFormat).toPattern();
+        }
+
+        return dateFormatPattern;
+    }
+
+    public DateFormat getDateFormat()
+    {
+        if (dateFormat == null)
+        {
+            if (dateFormatPattern != null)
+            {
+                dateFormat = new SimpleDateFormat(dateFormatPattern, locale);
+                dateFormat.setTimeZone(timeZone);
+            }
+        }
+
+        return dateFormat;
+    }
+
+    public void setDateFormat(DateFormat dateFormat)
+    {
+        this.dateFormat = dateFormat;
+        if (dateFormatPattern != null)
+        {
+            dateFormatPattern = null;
+        }
+    }
+
+    public void setDateFormat(String dateFormat)
+    {
+        this.dateFormatPattern = dateFormat;
+        if (this.dateFormat != null)
+        {
+            this.dateFormat = null;
+        }
     }
 }

@@ -3,6 +3,7 @@ package io.github.orange.line.parser.deserializer;
 import io.github.orange.line.annotation.Property;
 import io.github.orange.line.parser.LineParser;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 
 /**
@@ -12,5 +13,5 @@ import java.lang.reflect.Type;
  */
 public interface ObjectDeserializer
 {
-    <T> T deserialze(LineParser parser, Type type, String fieldName, Property property);
+    <T> T deserialze(LineParser parser, String input, Field field);
 }

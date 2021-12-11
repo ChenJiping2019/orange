@@ -123,7 +123,7 @@ public class LineSerializer
 
         if(length <= Constants.MAX_LENGTH)
         {
-            length = fields.length + 1;
+            length = fields[fields.length - 1].getAnnotation(Property.class).order() + 1;
         }
 
         for(int i = 0; i < length; ++ i)

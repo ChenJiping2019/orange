@@ -57,6 +57,10 @@ public class SerializeConfig
         put(Long.class, NumberCodec.instance);
         put(Short.class, NumberCodec.instance);
         put(BigDecimal.class, NumberCodec.instance);
+        put(boolean.class, BooleanCodec.instance);
+        put(Boolean.class, BooleanCodec.instance);
+        put(char.class, CharacterCodec.instance);
+        put(Character.class, CharacterCodec.instance);
     }
 
     public String getSeparator()
@@ -112,7 +116,7 @@ public class SerializeConfig
             }
             catch(InstantiationException | IllegalAccessException e)
             {
-                throw new LineException("new instance of ObjectSerializer fail:" + property.serializer() + "not support," + e.getLocalizedMessage());
+                throw new LineException("new instance of ObjectSerializer fail:" + property.serializer() + " not support," + e.getLocalizedMessage());
             }
         }
 
@@ -123,7 +127,7 @@ public class SerializeConfig
 
         if(serializer == null)
         {
-            throw new LineException("the field type " + type.getTypeName() + "not support");
+            throw new LineException("the field type " + type.getTypeName() + " not support");
         }
 
         return serializer;
