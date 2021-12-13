@@ -10,13 +10,12 @@ import java.io.StringWriter;
 
 /**
  * @author orange
- * @Description: 该类是将OrangeLine的主要类，通常使用{@link #toLineString(Object)}和{@link #parseObject(String, Class)}
+ * 该类是将OrangeLine的主要类，通常使用{@link #toLineString(Object)}和{@link #parseObject(String, Class)}
  * 例：
  *    Model model = new Model();
  *    String line = Line.toLineString(model);// serializes model to line text
  *    Model model2 = Line.parseObject(line, Model.class); // deserializes line into model2
  *
- * @date 2021/12/6 16:02
  */
 public class Line
 {

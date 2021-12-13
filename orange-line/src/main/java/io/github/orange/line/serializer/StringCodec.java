@@ -12,8 +12,6 @@ import java.text.MessageFormat;
 
 /**
  * @author orange
- * @Description:
- * @date 2021/12/9 17:01
  */
 public class StringCodec implements ObjectSerializer, ObjectDeserializer
 {

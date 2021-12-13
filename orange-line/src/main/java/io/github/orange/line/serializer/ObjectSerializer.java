@@ -6,8 +6,6 @@ import java.lang.reflect.Type;
 
 /**
  * @author orange
- * @Description:
- * @date 2021/12/6 16:40
  */
 public interface ObjectSerializer
 {

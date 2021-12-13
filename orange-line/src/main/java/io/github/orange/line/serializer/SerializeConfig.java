@@ -14,8 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author orange
- * @Description: 序列化配置
- * @date 2021/12/6 16:42
+ * 序列化配置
  */
 public class SerializeConfig
 {

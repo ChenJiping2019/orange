@@ -11,8 +11,7 @@ import java.util.List;
 
 /**
  * @author orange
- * @Description: {@link java.lang.reflect.Field}工具类
- * @date 2021/12/9 11:43
+ * {@link java.lang.reflect.Field}工具类
  */
 public class FieldUtil
 {

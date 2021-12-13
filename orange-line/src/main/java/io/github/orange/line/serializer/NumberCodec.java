@@ -15,8 +15,7 @@ import java.text.ParseException;
 
 /**
  * @author: orange
- * @description: 数字类型数据处理
- * @create: 2021/12/10 13:30
+ * 数字类型数据处理
  */
 public class NumberCodec implements ObjectSerializer, ObjectDeserializer
 {

@@ -17,8 +17,6 @@ import java.util.TimeZone;
 
 /**
  * @author orange
- * @Description:
- * @date 2021/12/6 17:46
  */
 public class LineSerializer
 {

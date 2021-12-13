@@ -15,8 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author orange
- * @Description: 反序列化解析配置
- * @date 2021/12/6 16:57
+ * 反序列化解析配置
  */
 public class ParserConfig
 {

@@ -16,8 +16,6 @@ import java.util.Date;
 
 /**
  * @author orange
- * @Description:
- * @date 2021/12/9 17:54
  */
 public class DateCodec implements ObjectSerializer, ObjectDeserializer
 {

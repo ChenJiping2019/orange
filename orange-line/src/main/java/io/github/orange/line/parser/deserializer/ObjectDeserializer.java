@@ -8,8 +8,7 @@ import java.lang.reflect.Type;
 
 /**
  * @author orange
- * @Description:反序列化接口
- * @date 2021/12/6 16:58
+ * 反序列化接口
  */
 public interface ObjectDeserializer
 {

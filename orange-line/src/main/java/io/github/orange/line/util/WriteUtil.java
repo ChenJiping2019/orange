@@ -7,8 +7,6 @@ import java.io.Writer;
 
 /**
  * @author orange
- * @Description:
- * @date 2021/12/9 14:31
  */
 public class WriteUtil
 {

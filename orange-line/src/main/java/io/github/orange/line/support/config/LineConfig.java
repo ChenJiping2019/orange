@@ -6,8 +6,7 @@ import io.github.orange.line.serializer.SerializeConfig;
 
 /**
  * @author orange
- * @Description:Line工具的配置
- * @date 2021/12/6 16:28
+ * Line工具的配置
  */
 public class LineConfig
 {

@@ -2,8 +2,7 @@ package io.github.orange.line;
 
 /**
  * @author orange
- * @Description: 常用工具类
- * @date 2021/12/6 16:31
+ * 常用工具类
  */
 public final class Constants
 {
