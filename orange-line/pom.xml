@@ -11,7 +11,7 @@
   <name>orange-line</name>
   <!-- FIXME change it to the project's website -->
   <url>https://github.com/chenjp-huan/orange</url>
-
+  <description>The object is (inversely) sequenced into a single line of string</description>
   <licenses>
     <license>
       <name>The Apache License, Version 2.0</name>
@@ -106,7 +106,7 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.1</version>
+            <version>3.3.1</version>
             <configuration>
                 <encoding>UTF-8</encoding>
                 <outputDirectory>target/javadoc</outputDirectory>
@@ -115,9 +115,9 @@
           <executions>
               <execution>
                   <id>attach-javadocs</id>
-                  <phase>package</phase>
+                  <phase>site</phase>
                   <goals>
-                      <goal>jar</goal>
+                      <goal>aggregate</goal>
                   </goals>
               </execution>
           </executions>
@@ -125,12 +125,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.1</version>
           <executions>
             <execution>
-              <phase>package</phase>
+              <phase>compile</phase>
               <goals>
-                <goal>jar-no-fork</goal>
+                <goal>jar</goal>
               </goals>
             </execution>
           </executions>
