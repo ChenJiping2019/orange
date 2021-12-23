@@ -336,7 +336,7 @@ public class JdomUtil
     /**
      *
      * @param element 待转换的{@link Element}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@link #DEFAULT_ENCODING}
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
      */
@@ -359,7 +359,7 @@ public class JdomUtil
     /**
      *
      * @param element 待转换的{@link Element}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@link #DEFAULT_ENCODING}
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
      */
