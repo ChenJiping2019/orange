@@ -66,7 +66,7 @@ public class StreamUtil
      * 将输入流读入到指定的字节数组中，如果读取内容不足，将抛出{@link IOException}异常
      * @param bytes 指定的字节数组
      * @param is 输入流
-     * @throws IOException
+     * @throws IOException 输出流异常
      */
     public static void readFull(byte[] bytes, InputStream is) throws IOException
     {
@@ -136,7 +136,7 @@ public class StreamUtil
      * 将给定字节数组写入到输出流，不关闭输出流
      * @param bytes 字节数组内容
      * @param out 输出流
-     * @throws IOException
+     * @throws IOException 输出流异常
      */
     public static void ouputWithoutClose(byte[] bytes, OutputStream out) throws IOException
     {
@@ -148,7 +148,7 @@ public class StreamUtil
      * @param bytes 字节数组内容
      * @param out 输出流
      * @param isClose 是否关闭输出流：true-关闭，false-不关闭
-     * @throws IOException
+     * @throws IOException 输出流异常
      */
     public static void ouput(byte[] bytes, OutputStream out, boolean isClose) throws IOException
     {

@@ -23,7 +23,7 @@ public class HttpServletFileUtil
      * @param file 给定的文件
      * @param request HttpServlet请求
      * @param response HttpServlet响应
-     * @throws IOException
+     * @throws IOException 输出流异常
      */
     public static void output(File file, HttpServletRequest request, HttpServletResponse response) throws IOException
     {
@@ -84,7 +84,7 @@ public class HttpServletFileUtil
      * @param filename 文件名
      * @param request HttpServlet请求
      * @param response HttpServlet响应
-     * @throws IOException
+     * @throws IOException 输出流异常
      */
     public static void output(byte fileBytes[], String filename, HttpServletRequest request, HttpServletResponse response) throws IOException
     {
@@ -125,8 +125,8 @@ public class HttpServletFileUtil
      * 编码文件名，避免中文乱码
      * @param filename 文件名
      * @param request HttpServlet请求
-     * @return
-     * @throws UnsupportedEncodingException
+     * @return 返回编码后的文件名
+     * @throws UnsupportedEncodingException {@link HttpServletFileUtil#UTF8_KERNEL}内核浏览器时，编码文件名异常
      */
     private static String encodingFilename(String filename, HttpServletRequest request) throws UnsupportedEncodingException
     {
