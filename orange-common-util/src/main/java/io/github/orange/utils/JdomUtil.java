@@ -29,7 +29,7 @@ public class JdomUtil
     /**
      *
      * @param inputStream xml输入流
-     * @param charset 编码格式，如果为<code>null</code>,则取{@value DEFAULT_ENCODING}
+     * @param charset 编码格式，如果为<code>null</code>,则取{@value #DEFAULT_ENCODING}
      * @param ignoringBoundaryWhitespace 是否应消除边界空白
      * @return 根据xml数据输入流构建 {@link Document}
      * @throws JDOMException 解析异常
@@ -53,7 +53,7 @@ public class JdomUtil
     /**
      *
      * @param bytes xml字节数组
-     * @param charset 编码格式，如果为<code>null</code>,则取 {@value DEFAULT_ENCODING}
+     * @param charset 编码格式，如果为<code>null</code>,则取 {@value #DEFAULT_ENCODING}
      * @param ignoringBoundaryWhitespace 是否应消除边界空白
      * @return 根据xml数据输入流构建 {@link Document}
      * @throws JDOMException 解析异常
@@ -67,7 +67,7 @@ public class JdomUtil
     /**
      * 默认消除边界空白进行xml字节数组解析
      * @param bytes xml字节数组
-     * @param charset 编码格式，如果为 null,则取 {@value DEFAULT_ENCODING}
+     * @param charset 编码格式，如果为 null,则取 {@value #DEFAULT_ENCODING}
      * @return 根据xml数据输入流构建 {@link Document}
      * @throws JDOMException 解析异常
      * @throws IOException 流入流读取异常
@@ -78,7 +78,7 @@ public class JdomUtil
     }
 
     /**
-     * 默认采用 {@value DEFAULT_ENCODING}编码并消除边界空白进行xml字节数组解析
+     * 默认采用 {@value #DEFAULT_ENCODING}编码并消除边界空白进行xml字节数组解析
      * @param bytes xml字节数组
      * @return 根据xml数据输入流构建 {@link Document}
      * @throws JDOMException 解析异常
@@ -216,7 +216,7 @@ public class JdomUtil
     /**
      *
      * @param document 待转换的{@link Document}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
      * @param isPretty isPretty 是否格式化
      * @return 如果document为<code>null</code>,则返回<code>null</code>
      * @throws IOException 转换成字节流异常
@@ -263,7 +263,7 @@ public class JdomUtil
     }
 
     /**
-     * 按默认编码格式{@value DEFAULT_ENCODING}格式化{@link Document}对象
+     * 按默认编码格式{@value #DEFAULT_ENCODING}格式化{@link Document}对象
      * @param document 待转换的{@link Document}对象
      * @return 如果document为 <code>null</code>,则返回 <code>null</code>
      * @throws IOException 转换成字节流异常
@@ -286,7 +286,7 @@ public class JdomUtil
     }
 
     /**
-     * 按默认编码格式{@value DEFAULT_ENCODING}转换{@link Document}对象
+     * 按默认编码格式{@value #DEFAULT_ENCODING}转换{@link Document}对象
      * @param document 待转换的{@link Document}对象
      * @return 如果document为<code>null</code>,则返回<code>null</code>
      * @throws IOException 转换成字节流异常
@@ -299,7 +299,7 @@ public class JdomUtil
     /**
      *
      * @param element 待转换的{@link Element}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
      * @param isPretty 是否格式化
      * @return 如果element为<code>null</code>，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
@@ -336,7 +336,7 @@ public class JdomUtil
     /**
      *
      * @param element 待转换的{@link Element}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
      */
@@ -346,7 +346,7 @@ public class JdomUtil
     }
 
     /**
-     * 采用默认编码格式{@value DEFAULT_ENCODING}进行处理
+     * 采用默认编码格式{@value #DEFAULT_ENCODING}进行处理
      * @param element 待转换的{@link Element}对象
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
@@ -359,7 +359,7 @@ public class JdomUtil
     /**
      *
      * @param element 待转换的{@link Element}对象
-     * @param encoding 编码格式，如果为<code>null</code>，则取{@value DEFAULT_ENCODING}
+     * @param encoding 编码格式，如果为<code>null</code>，则取{@value #DEFAULT_ENCODING}
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
      */
@@ -369,7 +369,7 @@ public class JdomUtil
     }
 
     /**
-     * 采用默认编码格式{@value DEFAULT_ENCODING}进行处理
+     * 采用默认编码格式{@value #DEFAULT_ENCODING}进行处理
      * @param element 待转换的{@link Element}对象
      * @return 如果element为空，则返回<code>null</code>
      * @throws IOException 转换成字节流异常
