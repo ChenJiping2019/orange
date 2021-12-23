@@ -13,7 +13,7 @@ public class StreamUtil
      * 将输入流转换成字节数组
      * @param is 输入流
      * @param isClose 读取完后，是否关闭输入流
-     * @return 返回读取内容，如果异常，则返回null
+     * @return 返回读取内容，如果异常，则返回<code>null</code>
      */
     public static byte[] toBytes(InputStream is, boolean isClose)
     {
@@ -55,7 +55,7 @@ public class StreamUtil
     /**
      * 将输入流转换成字节数组，不关闭输入流
      * @param is 输入流
-     * @return 返回读取内容，如果异常，则返回null
+     * @return 返回读取内容，如果异常，则返回<code>null</code>
      */
     public static byte[] toBytesWithoutClose(InputStream is)
     {
@@ -91,7 +91,7 @@ public class StreamUtil
     /**
      * 将{@link Reader}输入流转成字符串，并关闭输入流
      * @param reader 输入流
-     * @return 如果读取异常，则返回null
+     * @return 如果读取异常，则返回<code>null</code>
      */
     public static String toString(Reader reader)
     {

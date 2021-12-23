@@ -28,7 +28,7 @@ public class DateUtil
      * 将给定日期按给定的格式进行格式化
      * @param date 日期
      * @param pattern 新日期和时间格式模式的字符串
-     * @return
+     * @return 给定的日期字符串
      */
     public static String formatDate(Date date, String pattern)
     {
@@ -97,7 +97,7 @@ public class DateUtil
      * 将日期字符串按照指定的日期和时间模式进行解析
      * @param dateStr 日期字符串
      * @param pattern 日期和时间格式模式的字符串
-     * @return 解析失败，返回null
+     * @return 解析失败，返回 null
      */
     public static Date parseDate(String dateStr, String pattern)
     {
@@ -141,7 +141,7 @@ public class DateUtil
     /**
      * 根据日历的规则，将指定的时间量添加或减去给定的日历字段。 例如，要从给定的时间减去5天，您可以通过调用以下方法来实现：
      *  DateUtil.add("2021-01-01", "yyyy-MM-dd", Calendar.DAY_OF_MONTH, -5)
-     *  如果给定的pattern不能解析字符串的日期，则返回null
+     *  如果给定的pattern不能解析字符串的日期，则返回 null
      * @param dateStr 给定的字符串日期
      * @param pattern 日期和时间格式模式的字符串
      * @param field 日历字段，{@link Calendar}日历字段

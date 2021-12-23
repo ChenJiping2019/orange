@@ -33,9 +33,9 @@ public class JAXBUtil
      *
      * @param obj 待转换的对象
      * @param encoding xml输出编码格式
-     * @return 返回obj对应的xml字符串，如果obj为null,则返回null
-     * @throws JAXBException
-     * @throws UnsupportedEncodingException
+     * @return 返回obj对应的xml字符串，如果obj为 null,则返回 null
+     * @throws JAXBException 解析异常
+     * @throws UnsupportedEncodingException 编码格式有误
      */
     public static String objectToXmlStr(Object obj, String encoding) throws JAXBException, UnsupportedEncodingException
     {
@@ -66,7 +66,7 @@ public class JAXBUtil
      * 将obj按默认的编码格式{@value DEFAULT_ENCODING}转成字符串
      * @param obj 待转换的对象
      * @return 返回obj对应的xml字符串，如果obj为null,则返回null
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static String objectToXmlStr(Object obj) throws Exception
     {
@@ -79,7 +79,7 @@ public class JAXBUtil
      * @param obj 待转换的对象
      * @param file 要写入的文件。 如果这个文件已经存在，它将被覆盖
      * @param encoding xml输出编码格式
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static void objectToXmlStr(Object obj, File file, String encoding) throws Exception
     {
@@ -104,7 +104,7 @@ public class JAXBUtil
      * 将obj按照默认的编码格式{@value DEFAULT_ENCODING}写入文件
      * @param obj 待转换的对象
      * @param file 要写入的文件。 如果这个文件已经存在，它将被覆盖
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static void objectToXmlStr(Object obj, File file) throws Exception
     {
@@ -117,9 +117,9 @@ public class JAXBUtil
      * @param obj 待转换的对象
      * @param encoding 编码格式
      * @return 根据obj内容，生成{@link Document}对象，如果obj为null,则返回null
-     * @throws JAXBException
-     * @throws JDOMException
-     * @throws IOException
+     * @throws JAXBException 解析异常
+     * @throws JDOMException 生成文档对象异常
+     * @throws IOException 生成文档对象异常
      */
     public static Document objectToXmlDoc(Object obj, String encoding) throws JAXBException, JDOMException, IOException
     {
@@ -149,8 +149,9 @@ public class JAXBUtil
      * 从指定的文件解组XML数据并返回指定的type对象，如果给定的文件不存在或者不是文件，则返回null
      * @param file xml文件
      * @param type 实例对象{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlFileToObject(File file, Class<T> type) throws Exception
     {
@@ -171,8 +172,9 @@ public class JAXBUtil
      * 从指定的输入流解组XML数据并返回指定的type对象，如果给定的输入流为null，则返回null
      * @param is xml输入流
      * @param type 实例对象{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlIsStrToObject(InputStream is, Class<T> type) throws Exception
     {
@@ -193,9 +195,10 @@ public class JAXBUtil
      *
      * @param doc 解组的{@link Document}对象
      * @param type  实例对象{@link Class}类型
+     * @param <T> 对象类型
      * @param encoding {@link Document}对象的编码格式
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlDocToObject(Document doc, Class<T> type, String encoding) throws Exception
     {
@@ -221,9 +224,10 @@ public class JAXBUtil
     /**
      * 按默认的编码格式{@value DEFAULT_ENCODING}解组给定的{@link Document}对象
      * @param doc 解组的{@link Document}对象
+     * @param <T> 对象类型
      * @param type 实例对象{@link Class}类型
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlDocToObject(Document doc, Class<T> type) throws Exception
     {
@@ -233,10 +237,11 @@ public class JAXBUtil
     /**
      *
      * @param xml xml字符串内容
+     * @param <T> 对象类型
      * @param type 实例对象{@link Class}类型
      * @param encoding xml内容编码格式
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlStrToObject(String xml, Class<T> type, String encoding) throws Exception
     {
@@ -249,8 +254,9 @@ public class JAXBUtil
      * 按默认的编码格式{@value DEFAULT_ENCODING}解组给定的xml字符串内容
      * @param xml xml字符串内容
      * @param type 实例对象{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type实例对象
-     * @throws Exception
+     * @throws Exception 解析异常
      */
     public static <T> T xmlStrToObject(String xml, Class<T> type) throws Exception
     {
@@ -260,8 +266,9 @@ public class JAXBUtil
     /**
      *
      * @param type 指定对象的{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type对应的 {@link Unmarshaller}实例
-     * @throws JAXBException
+     * @throws JAXBException 解析异常
      */
     private static <T> Unmarshaller getUnmarshaller(Class<T> type) throws JAXBException
     {
@@ -276,8 +283,9 @@ public class JAXBUtil
     /**
      *
      * @param type 指定对象的{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type对应的 {@link Marshaller}实例
-     * @throws JAXBException
+     * @throws JAXBException 解析异常
      */
     private static <T> Marshaller getMarshaller(Class<T> type) throws JAXBException
     {
@@ -292,8 +300,9 @@ public class JAXBUtil
     /**
      * 获取指定type的{@link JAXBContext}对象
      * @param type 指定对象的{@link Class}类型
+     * @param <T> 对象类型
      * @return 返回type对应的 {@link JAXBContext}实例
-     * @throws JAXBException
+     * @throws JAXBException 解析异常
      */
     public static <T> JAXBContext getStoredJAXBContext(Class<T> type) throws JAXBException
     {
