@@ -6,7 +6,7 @@
 
   <groupId>io.github.chenjp-huan</groupId>
   <artifactId>orange-common-util</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>orange-common-util</name>
   <!-- FIXME change it to the project's website -->
